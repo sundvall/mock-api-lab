@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     this.exampleResponseService
       .getResponseExample()
       .subscribe(responseExample => {
-        console.log('app.component.response:', responseExample);
+        console.log('app.component.response:getResponseExample:', responseExample);
         return (this.responseExample = responseExample);
       });
     // Fetch only part of the mocked content where id='abc'
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       .getDataFrom('abc')
       .subscribe(responseExample => {
         console.log(
-          'app.component.response: should match id="abc"',
+          'app.component.response: getDataFrom("abc"): should match id="abc"',
           responseExample
         );
         return (this.responseExample = responseExample);
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       .getDataFromName('response-3-name')
       .subscribe(responseExample => {
         console.log(
-          'app.component.response: should match name="response-3-name"',
+          'app.component.response: getDataFromName: should match name="response-3-name"',
           responseExample
         );
         return (this.responseExample = responseExample);

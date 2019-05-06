@@ -38,6 +38,7 @@ export class ExampleResponseService {
 
   getDataFromName(name: string): Observable<ResponseExample[]> {
     // examplifies how to get the data with a query string
+    console.log('example-response.service: getDataFromName');
     const params = new HttpParams().set('name', name);
     return this.http
       .get<ResponseExample[]>(this.url, { params })
